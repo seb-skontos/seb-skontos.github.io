@@ -1,19 +1,49 @@
 import React from "react";
 
-const Card = ({ title, description, githubLink }) => (
-  <div className="rounded-2xl shadow-lg bg-gradient-to-br from-gray-800 to-gray-900 text-gray-100 hover:scale-105 hover:shadow-2xl transition-transform p-6">
-    <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-    <p className="text-gray-400 mb-6">{description}</p>
-    <a
-      href={githubLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors"
-    >
-      View on GitHub
-    </a>
+const Card = ({ image, title, description, githubLink, technologies, objectFit = "cover" }) => (
+  <div className="grid sm:grid-cols-8 gap-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+    {/* Thumbnail */}
+    <div className="sm:col-span-2 flex-shrink-0">
+      <div className="w-full h-36 md:h-40 overflow-hidden rounded-lg">
+        <img
+          src={image}
+          alt={title}
+          className={`w-full h-full object-${objectFit}`}
+        />
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="sm:col-span-6 flex flex-col justify-between">
+      {/* Title */}
+      <h3 className="text-2xl font-bold text-gray-100 mb-2">{title}</h3>
+
+      {/* Description */}
+      <p className="text-gray-400 mb-4">{description}</p>
+
+      {/* GitHub Link */}
+      <a
+        href={githubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-400 hover:underline mb-4"
+      >
+        View on GitHub ↗
+      </a>
+
+      {/* Technologies */}
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech) => (
+          <span
+            key={tech}
+            className="text-sm bg-gray-700 text-gray-200 px-3 py-1 rounded-full"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
   </div>
 );
-
 
 export default Card;
