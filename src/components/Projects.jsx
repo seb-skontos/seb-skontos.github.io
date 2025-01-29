@@ -10,6 +10,17 @@ const Projects = () => (
     <div className="flex flex-col gap-8">
 
       <Card
+        image="/bbtb.png"
+        title="Swift & SwiftUI Projects"
+        description="Currently building a suite of iOS applications to self-learn 
+        Swift and SwiftUI. My latest project is a booking app for a mobile 
+        bartending service, enabling customers to seamlessly schedule and manage 
+        their bookings through the app"
+        technologies={["Swift", "SwiftUI", "XCode"]}
+        objectFit="contain"
+      />
+
+      <Card
         image="/insite.png"
         title="InSite Monitoring"
         description={

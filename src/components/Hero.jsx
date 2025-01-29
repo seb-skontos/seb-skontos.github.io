@@ -39,7 +39,7 @@ const Hero = () => {
           {typedText}
         </h1>
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl">
-          I'm a passionate Software Engineering and Law student at the University of Sydney, focusing on creating impactful solutions with AI and Machine Learning.
+          I'm a dedicated Software Engineering and Law student at the University of Sydney, focusing on creating impactful solutions with AI and Machine Learning.
         </p>
         <div className="mt-8 flex items-center space-x-4">
         <motion.button

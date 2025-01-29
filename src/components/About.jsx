@@ -4,7 +4,7 @@ const About = () => (
   <section id="about" className="bg-gray-100 dark:bg-gray-800 py-16 px-8 md:px-20 lg:px-40">
     <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">About Me</h2>
     <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-4xl mx-auto mb-6 text-center">
-      I’m Sebastian, a Software Engineering and Law student at the University of Sydney. My passion lies in developing innovative solutions, exploring AI/ML, and crafting impactful projects. Outside of coding, I enjoy learning new technologies and solving challenging problems.
+    I love tackling projects that challenge me to think critically and push the boundaries of what technology can do. Whether it’s coding, exploring new technologies, or solving complex problems, I’m always looking for ways to create meaningful impact.
     </p>
     <div className="text-center">
       <a

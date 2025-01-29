@@ -22,14 +22,16 @@ const Card = ({ image, title, description, githubLink, technologies, objectFit =
       <p className="text-gray-400 mb-4">{description}</p>
 
       {/* GitHub Link */}
-      <a
+      {githubLink && (
+        <a
         href={githubLink}
         target="_blank"
         rel="noopener noreferrer"
         className="text-blue-400 hover:underline mb-4"
-      >
-        View on GitHub ↗
-      </a>
+        >
+          View on GitHub ↗
+        </a>
+      )}
 
       {/* Technologies */}
       <div className="flex flex-wrap gap-2">
