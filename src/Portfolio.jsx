@@ -100,7 +100,7 @@ const Portfolio = () => {
       <Contact />
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 text-center py-6">
-        <p>&copy; 2025 Sebastian. All rights reserved.</p>
+        <p>&copy; 2025 Sebastian. All rights reserved. Built with <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Next.js</a> and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Tailwind CSS</a>. </p>
       </footer>
       {/* Background Canvas */}
       <canvas
