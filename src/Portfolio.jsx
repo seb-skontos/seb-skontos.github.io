@@ -8,37 +8,42 @@ const Portfolio = () => {
   useEffect(() => {
     const canvas = document.getElementById("dynamicBackground");
     const ctx = canvas.getContext("2d");
-    const particles = [];
+    let particles = [];
+    
+    // Define adaptive settings based on screen width
+    const isMobile = window.innerWidth < 768;
+    const PARTICLE_COUNT = isMobile ? 50 : 100;  // Fewer particles on mobile
+    const CONNECTION_DISTANCE = isMobile ? 70 : 100;  // Shorter links on mobile
+    const SPEED_MULTIPLIER = 0.5;
 
     const createParticle = () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
+      vx: (Math.random() - 0.5) * SPEED_MULTIPLIER,
+      vy: (Math.random() - 0.5) * SPEED_MULTIPLIER,
       size: Math.random() * 2 + 1,
     });
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p, i) => {
-        // Draw the particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
         ctx.fill();
 
-        // Draw connections to nearby particles
+        // Reduce the number of connections on smaller screens
         particles.forEach((other, j) => {
           if (i !== j) {
             const dx = p.x - other.x;
             const dy = p.y - other.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 100) {
+            if (distance < CONNECTION_DISTANCE) {
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(other.x, other.y);
-              ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`;
+              ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / CONNECTION_DISTANCE})`;
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }
@@ -52,7 +57,6 @@ const Portfolio = () => {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Bounce particles off the edges
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
       });
@@ -64,23 +68,22 @@ const Portfolio = () => {
       requestAnimationFrame(loop);
     };
 
-    // Set canvas size
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    // Create particles
-    for (let i = 0; i < 100; i++) {
-      particles.push(createParticle());
-    }
-
-    // Start animation loop
-    loop();
-
-    // Adjust canvas size on window resize
-    const handleResize = () => {
+    const initializeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(createParticle());
+      }
+      loop();
     };
+
+    initializeCanvas();
+
+    const handleResize = () => {
+      initializeCanvas();
+    };
+
     window.addEventListener("resize", handleResize);
 
     return () => {
