@@ -68,7 +68,7 @@ const Portfolio = () => {
       requestAnimationFrame(loop);
     };
 
-    const initializeCanvas = () => {
+    const initializeParticles = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       particles = [];
@@ -78,16 +78,26 @@ const Portfolio = () => {
       loop();
     };
 
-    initializeCanvas();
-
-    const handleResize = () => {
-      initializeCanvas();
+    // Set up the canvas size
+    const resizeCanvas = () => {
+      const oldParticles = particles.map(p => ({ ...p })); // Preserve particle positions
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = oldParticles.filter(p => p.x < canvas.width && p.y < canvas.height); // Remove out-of-bound particles
+      while (particles.length < PARTICLE_COUNT) {
+        particles.push(createParticle()); // Add new particles if needed
+      }
     };
 
-    window.addEventListener("resize", handleResize);
+    // Initial setup
+    resizeCanvas();
+    initializeParticles();
+    loop();
+
+    window.addEventListener("resize", resizeCanvas);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
 
