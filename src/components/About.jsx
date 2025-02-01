@@ -17,7 +17,7 @@ const About = () => (
     </p>
     <div className="text-center">
       <a
-        href="/25.01 CV Sebastian Skontos.pdf"
+        href="/CV Sebastian Skontos.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block px-6 py-3 text-sm md:text-base bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors"

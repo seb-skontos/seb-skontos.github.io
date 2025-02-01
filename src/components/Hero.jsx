@@ -45,8 +45,9 @@ const Hero = () => {
     const canvas = document.getElementById("dynamicBackground");
     const ctx = canvas.getContext("2d");
     const particles = [];
-    const particleCount = 150; // Increase particle count for more connections
-    const connectionDistance = 120; // Increase connection distance for more connections
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 50 : 150;
+    const connectionDistance = isMobile ? 80 : 120;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
