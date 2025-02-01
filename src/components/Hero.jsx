@@ -6,7 +6,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const fullText = "Hi, I'm Sebastian.";
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
+    return localStorage.getItem("theme") || "dark";
   });
   const [particleColor, setParticleColor] = useState(theme === "dark" ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)");
 
