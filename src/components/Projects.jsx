@@ -2,9 +2,9 @@ import React from "react";
 import Card from "./Card";
 
 const Projects = () => (
-  <section id="projects" className="bg-gray-900 py-16 px-8 md:px-20 lg:px-40">
+  <section id="projects" className="bg-gray-100 dark:bg-gray-900 py-16 px-8 md:px-20 lg:px-40">
     {/* Heading */}
-    <h2 className="text-4xl font-bold text-blue-400 mb-12 text-left">Projects</h2>
+    <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-left">Projects</h2>
 
     {/* Card Container */}
     <div className="flex flex-col gap-8">
@@ -30,7 +30,7 @@ const Projects = () => (
               href="https://www.linkedin.com/posts/consilium-solutions-aus_insitemonitoring-consiliumsolutions-projectmanagement-activity-7282961827896926208-9AEV?utm_source=share&utm_medium=member_desktop"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:underline"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
             >
               here
             </a>{' '}
