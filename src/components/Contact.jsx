@@ -13,7 +13,7 @@ const Contact = () => (
       <a href="mailto:skontossebastian@gmail.com" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 text-2xl transition-transform transform hover:scale-110">
         <FaEnvelope />
       </a>
-      <a href="https://github.com/seb-skontos" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 text-2xl transition-transform transform hover:scale-110">
+      <a href="https://github.com/sebskontos" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 text-2xl transition-transform transform hover:scale-110">
         <FaGithub />
       </a>
       <a href="https://linkedin.com/in/sebastian-skontos" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 text-2xl transition-transform transform hover:scale-110">
