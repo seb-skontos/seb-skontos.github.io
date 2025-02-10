@@ -15,7 +15,8 @@ const Projects = () => (
         description="Currently building a suite of iOS applications to self-learn 
         Swift and SwiftUI. My latest project is a booking app for a mobile 
         bartending service, enabling customers to seamlessly schedule and manage 
-        their bookings through the app"
+        their bookings through the app."
+        githubLink="https://github.com/sebskontos/BoysBehindTheBar"
         technologies={["Swift", "SwiftUI", "XCode"]}
         objectFit="contain"
       />
@@ -37,7 +38,7 @@ const Projects = () => (
             for more details.
           </>
         }
-        githubLink="https://github.com/ssko7098/capstone"
+        githubLink="https://github.com/sebskontos/capstone"
         technologies={["Python", "OpenCV", "Tenserflow", "PyTorch", "YOLOv8"]}
       />
 
@@ -47,7 +48,7 @@ const Projects = () => (
         description="A full-stack music streaming web application. Developed and 
         deployed on AWS with Nginx, Django, and Google OAuth 2.0 for secure 
         authentication."
-        githubLink="https://github.com/ssko7098/Harmonize"
+        githubLink="https://github.com/sebskontos/Harmonize"
         technologies={["Python", "Django", "CSS", "HTML", "AJAX", "AWS"]}
       />
 
@@ -59,7 +60,7 @@ const Projects = () => (
         featuring enemy spawning, projectiles, collision detection, and game 
         state transitions. Leveraged OOP principles and design patterns like 
         Factory, Builder, and State."
-        githubLink="https://github.com/ssko7098/Space-Invaders-v2.0.0"
+        githubLink="https://github.com/sebskontos/Space-Invaders-v2.0.0"
         technologies={["Java", "JavaFX", "Design Patterns"]}
         objectFit="contain"
       />
